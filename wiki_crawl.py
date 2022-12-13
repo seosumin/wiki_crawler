@@ -117,7 +117,8 @@ def wiki_rule_crawler(seed_list):
                     see_also = see_also[see_also.find('*'):]
                     print(see_also)
                     print(type(see_also))
-                    p = re.compile('\[\[.+\]\]|\{\{.+\}\}')
+                    #p = re.compile('\[\[.+\]\]|\{\{.+\}\}')
+                    p = re.compile('\[\[.+\]\]')
                     see_also = p.findall(see_also)
                     see_also = list(map(text_pre, see_also))
                     print(see_also)
@@ -152,12 +153,12 @@ def wiki_rule_crawler(seed_list):
 
                 #see_also_list = list(set(list(itertools.chain(*tmp_see_also))))
                 see_also_list=tmp_see_also
-                #print(see_also_list)
 
                 see_also_html = DATA['parse']['text']['*']
                 sa_a_soup = BeautifulSoup(see_also_html, "lxml")
-
+                del_index_list=[]
                 for see_also_title in see_also_list:
+                    print(see_also_title)
                     try:
                         see_also_a = sa_a_soup.find('a', string=see_also_title)
                         if not see_also_a:
@@ -166,17 +167,22 @@ def wiki_rule_crawler(seed_list):
                             see_also_a = sa_a_soup.find('a', title=re.compile(see_also_title))
                         if not see_also_a:
                             print('see also {} 는 a 태그 없는 링크'.format(see_also_title))
+                            del_index = see_also_list.index(see_also_title)
+                            del_index_list.append(del_index)
+                            continue
                     except Exception as ex:
                         print('시올소 링크 없음')
 
-                    see_also_url = base_url + see_also_a['href']  # 시올소 링크
 
+                    see_also_url = base_url + see_also_a['href']  # 시올소 링크
+                    print(see_also_url)
                     html = S.get(see_also_url, headers={'User-Agent': user_agent}).text
                     sa_title_url_soup = BeautifulSoup(html, "lxml")
                     sa_original_title = sa_title_url_soup.select_one(
                         'h1[id="firstHeading"]').get_text()  # 시올소 원래 타이틀 가져오기
 
                     sa_original_title = str(sa_original_title)  # 최종 수집 타이틀(필터링 전)
+                    #print(sa_original_title)
                     PARAMS = {
                         "action": "query",
                         "format": "json",
@@ -189,13 +195,17 @@ def wiki_rule_crawler(seed_list):
                     DATA = R_c_t.json()
                     time.sleep(0.5)
                     ct_and_content = list(DATA['query']['pages'].values())[0]
+
                     cate_list = [k['title'].replace("Category:", "").lower() for k in ct_and_content['categories']]
                     for c in cate_list:
                         if c_rule.search(c) is not None:
                             print("{}는 필터링 룰에 걸렸습니다".format(see_also_title), c)
                             del_index = see_also_list.index(see_also_title)
-                            del see_also_list[del_index]
+                            del_index_list.append(del_index)
+                            #del see_also_list[del_index]
                             break
+
+                see_also_list = [i for i in see_also_list if i not in del_index_list]
 
                 for sa in see_also_list:
                     if len(sa) == 1:

@@ -3,7 +3,7 @@ import pandas as pd
 
 item_list=['Natural hydrogen']
 
-n=3
+n=1
 df_seed_items=wiki_crawl.n_char_crawler(item_list, n)
 print(df_seed_items)
 print(len(df_seed_items))
