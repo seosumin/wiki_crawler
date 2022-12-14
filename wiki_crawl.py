@@ -156,6 +156,7 @@ def wiki_rule_crawler(seed_list):
 
                 see_also_html = DATA['parse']['text']['*']
                 sa_a_soup = BeautifulSoup(see_also_html, "lxml")
+
                 del_index_list=[]
                 for see_also_title in see_also_list:
                     print(see_also_title)
@@ -167,8 +168,8 @@ def wiki_rule_crawler(seed_list):
                             see_also_a = sa_a_soup.find('a', title=re.compile(see_also_title))
                         if not see_also_a:
                             print('see also {} 는 a 태그 없는 링크'.format(see_also_title))
-                            del_index = see_also_list.index(see_also_title)
-                            del_index_list.append(del_index)
+                            #del_index = see_also_list.index(see_also_title)
+                            del_index_list.append(see_also_title)
                             continue
                     except Exception as ex:
                         print('시올소 링크 없음')
@@ -200,11 +201,12 @@ def wiki_rule_crawler(seed_list):
                     for c in cate_list:
                         if c_rule.search(c) is not None:
                             print("{}는 필터링 룰에 걸렸습니다".format(see_also_title), c)
-                            del_index = see_also_list.index(see_also_title)
-                            del_index_list.append(del_index)
+                            #del_index = see_also_list.index(see_also_title)
+                            del_index_list.append(see_also_title)
                             #del see_also_list[del_index]
                             break
 
+                print(del_index_list)
                 see_also_list = [i for i in see_also_list if i not in del_index_list]
 
                 for sa in see_also_list:

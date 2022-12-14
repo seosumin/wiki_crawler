@@ -1,30 +1,45 @@
 ,from,to
-0,Cultured meat,BioArt
-1,Cultured meat,BioTech Foods
-2,Cultured meat,Cellular agriculture society
-3,Cultured meat,Factory farming divestment
-4,Cultured meat,Food vs. feed
-5,Cultured meat,Cultured leather
-6,Cultured meat,List of meat substitutes
-7,Cultured meat,Meat analogue
-8,Cultured meat,Quorn (food product)
-9,Cultured meat,Resource decoupling
-10,Cultured meat,Shark fin soup substitute
-11,Cultured meat,Timeline of cellular agriculture
-12,Cultured meat,Tissue culture
-13,Cultured meat,Veganism
-14,Magnetic 3D bioprinting,Bio-printing
-15,Magnetic 3D bioprinting,Organovo
-16,Regenerative medicine,Anti-aging medicine
-17,Regenerative medicine,Artificial organ
-18,Regenerative medicine,Biomedicine
-19,Regenerative medicine,LIN28
-20,Regenerative medicine,Osteoarthritis#Research
-21,Regenerative medicine,publisher=Duke Health
-22,Regenerative medicine,Polyphyodont
-23,Regenerative medicine,Regeneration in humans
-24,Regenerative medicine,Regenerative endodontics
-25,Regenerative medicine,Rejuvenation (aging)
-26,Regenerative medicine,Stem cell treatments
-27,Regenerative medicine,TERMIS
-28,Regenerative medicine,Tooth regeneration
+0,Electrofuel,Bioelectrochemical reactor
+1,Electrofuel,Carbon-neutral fuel
+2,Electrofuel,Electrochemical cell
+3,Electrofuel,Electrochemical reduction of carbon dioxide
+4,Electrofuel,Electrohydrogenesis
+5,Electrofuel,Electromethanogenesis
+6,Electrofuel,Enzymatic biofuel cell
+7,Electrofuel,Greyrock
+8,Electrofuel,Hydrozine
+9,Electrofuel,LanzaTech
+10,Electrofuel,Microbial electrosynthesis
+11,Electrofuel,Power-to-gas
+12,Hydrogen economy,Alternative fuel
+13,Hydrogen economy,Fuel Cells and Hydrogen Joint Technology Initiative
+14,Hydrogen economy,Formic acid
+15,Hydrogen economy,Hydrogen damage
+16,Hydrogen economy,Hydrogen embrittlement
+17,Hydrogen economy,Hydrogen internal combustion engine vehicle
+18,Hydrogen economy,Hydrogen-powered aircraft
+19,Hydrogen economy,Methane pyrolysis
+20,Hydrogen economy,United States Hydrogen Policy
+21,Hydrogen production,Ammonia production
+22,Hydrogen production,Artificial photosynthesis
+23,Hydrogen production,Biohydrogen
+24,Hydrogen production,Hydrogen analyzer
+25,Hydrogen production,Hydrogen compressor
+26,Hydrogen production,Hydrogen embrittlement
+27,Hydrogen production,Hydrogen leak testing
+28,Hydrogen production,Hydrogen pipeline transport
+29,Hydrogen production,Hydrogen purifier
+30,Hydrogen production,Hydrogen purity
+31,Hydrogen production,Hydrogen safety
+32,Hydrogen production,Hydrogen sensor
+33,Hydrogen production,Hydrogen storage
+34,Hydrogen production,Hydrogen station
+35,Hydrogen production,Hydrogen tank
+36,Hydrogen production,Hydrogen tanker
+37,Hydrogen production,Hydrogen technologies
+38,Hydrogen production,Hydrogen valve
+39,Hydrogen production,Industrial gas
+40,Hydrogen production,Liquid hydrogen
+41,Hydrogen production,Lane hydrogen producer
+42,Hydrogen production,Linde–Frank–Caro process
+43,Hydrogen production,Underground hydrogen storage
